@@ -13,11 +13,13 @@ class Header extends Component {
     return (
       <Fragment>
         <header className="header">
-          <div className="title-wrapper">
-            <h1 className="title"> Weather App </h1>
-            <div className="menu-icon-wrapper">
-              <button className="menu-icon">&#9776;</button>
-            </div>
+          <h1 className = "app-name">
+            <span className="app-name-text-1">cloudy</span>
+            <span className="app-name-text-2">GEM</span>
+          </h1>
+          <h1> Weather App </h1>
+          <div className="menu-icon-wrapper">
+            <button className="menu-icon">&#9776;</button>
           </div>
         </header>
         <HeaderText />

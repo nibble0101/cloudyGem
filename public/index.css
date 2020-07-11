@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
 *,
 *::before,
 *::after {
@@ -7,7 +8,7 @@
 }
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 100;
   color: #6ed6ef;
   background: #141e30;
@@ -16,29 +17,22 @@ body {
   min-height: 100vh;
 }
 
-.title-wrapper {
+.header{
   height: 10vh;
   width: 100vw;
-  border-bottom: 1px solid whitesmoke;
-  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  font-weight: 100;
+  background-color: black;
 }
-.title {
-  width: 100%;
-  text-align: center;
-  color: whitesmoke;
+.app-name-text-1{
+    color: skyblue;
 }
-.menu-icon-wrapper {
-  position: absolute;
-  right: 10%;
-  height: 100%;
-  top: 0;
-  display: flex;
-  align-items: center;
+.app-name-text-2{
+    color: #9e8969;
 }
+
 .menu-icon-wrapper button {
   padding: 0.5em 1em;
   outline: none;
@@ -52,17 +46,17 @@ body {
   background-color: #9e8969;
   cursor: pointer;
 }
-.city {
-  text-transform: capitalize;
-  padding: 1em 0;
-}
 
 .search {
   padding: 2em;
+  min-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+}
+.search input{
+    background-color: skyblue;
 }
 .search input,
 .search button {
@@ -108,7 +102,6 @@ tr:nth-child(odd) {
   color: whitesmoke;
 }
 .header-text-wrapper-all {
-  /* This is for positioning only */
   position: relative;
   opacity: 0;
   transition: all 500ms linear;
@@ -119,14 +112,14 @@ tr:nth-child(odd) {
   opacity: 1;
 }
 .header-text-container {
-  background-color: #141e30;
-  box-shadow: 1px 1px 10px #6ed6ef;
+  background-color: black;
+  box-shadow: 1px 1px 10px #141e30;
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
   position: absolute;
-  right: 1em;
+  right: 4em;
   top: 0;
   width: 20vw;
   min-width: 250px;
@@ -203,20 +196,13 @@ div p.error-message a:hover {
 }
 
 .footer {
-  position: fixed;
-  display: inline-block;
-  left: 50%;
-  bottom: 1%;
-  transform: translate(-50%);
+  background-color: black;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.footer a {
-  color: whitesmoke;
-  text-decoration: none;
-  transition: color 500ms linear;
-}
-.footer a:hover {
-  color: wheat;
-}
+
 @keyframes image-animation {
   0% {
     transform: rotate(0deg);

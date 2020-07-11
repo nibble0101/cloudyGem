@@ -7,8 +7,8 @@ class HeaderText extends Component {
         <div className="header-text-container">
           <img
             className="img"
-            src="https://cdn.pixabay.com/photo/2016/11/29/11/12/adult-1869119_960_720.jpg"
-            alt="Woman in the rain"
+            src="https://cdn.pixabay.com/photo/2015/07/09/00/29/woman-837156_960_720.jpg"
+            alt="Cold pretty woman"
           ></img>
           <p className="header-text">
             This is a weather app displaying the expected weather for different
