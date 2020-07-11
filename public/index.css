@@ -19,7 +19,6 @@ body {
 
 .header{
   height: 10vh;
-  width: 100vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -201,6 +200,7 @@ div p.error-message a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 @keyframes image-animation {
