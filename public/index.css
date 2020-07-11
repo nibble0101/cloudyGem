@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+  color: #6ed6ef;
+  background: #141e30;
+  background: -webkit-linear-gradient(to bottom, #243b55, #141e30);
+  background: linear-gradient(#243b55, #141e30);
+  min-height: 100vh;
+}
+
+.title-wrapper {
+  height: 10vh;
+  width: 100vw;
+  border-bottom: 1px solid whitesmoke;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  width: 100%;
+  text-align: center;
+  color: whitesmoke;
+}
+.menu-icon-wrapper {
+  position: absolute;
+  right: 10%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+.menu-icon-wrapper button {
+  padding: 0.5em 1em;
+  outline: none;
+  background-color: gray;
+  border: 1px solid transparent;
+  color: whitesmoke;
+  font-size: 1em;
+  transition: background-color 1000ms linear, color 1000ms linear;
+}
+.menu-icon-wrapper button:hover {
+  background-color: #9e8969;
+  cursor: pointer;
+}
+.city {
+  text-transform: capitalize;
+  padding: 1em 0;
+}
+
+.search {
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.search input,
+.search button {
+  padding: 0.5em 1em;
+  outline: none;
+  color: teal;
+  border: 1px solid transparent;
+  margin: 0.1em;
+}
+.search button {
+  background-color: gray;
+  color: whitesmoke;
+}
+.search input:focus {
+  outline: none;
+}
+.search button:hover {
+  color: whitesmoke;
+  background-color: #9e8969;
+  cursor: pointer;
+}
+table {
+  border-collapse: collapse;
+  background-color: black;
+  color: whitesmoke;
+}
+table,
+th,
+td {
+  padding: 0.5em 1em;
+}
+.inner-table,
+.inner-table td {
+  border: none;
+}
+tr:nth-child(odd) {
+  background-color: grey;
+}
+
+.main-header-text {
+  text-align: center;
+  font-weight: 100;
+  color: whitesmoke;
+}
+.header-text-wrapper-all {
+  /* This is for positioning only */
+  position: relative;
+  opacity: 0;
+  transition: all 500ms linear;
+  -webkit-transition: all 500ms linear;
+  -moz-transitio: all 500ms linear;
+}
+.show {
+  opacity: 1;
+}
+.header-text-container {
+  background-color: #141e30;
+  box-shadow: 1px 1px 10px #6ed6ef;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  right: 1em;
+  top: 0;
+  width: 20vw;
+  min-width: 250px;
+  z-index: 999;
+}
+.header-text-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.header-text-container p,
+ul {
+  text-align: left;
+  margin: auto;
+  padding: 1em;
+  color: whitesmoke;
+}
+.header-text-container a {
+  text-decoration: none;
+  color: yellowgreen;
+  padding: 0.2em;
+  transition: color 500ms linear;
+}
+.header-text-container a:hover {
+  color: yellow;
+}
+
+.loader {
+  position: absolute;
+  left: 50vw;
+  top: 50vh;
+  transform: translate(-50%);
+  z-index: 10;
+  color: whitesmoke;
+  font-size: 3em;
+}
+.img-div {
+  display: flex;
+  height: 60vh;
+  justify-content: center;
+  align-items: center;
+}
+.img-div img {
+  width: 100%;
+  max-width: 200px;
+  display: block;
+  margin: 0 auto;
+  animation: image-animation 5s linear infinite forwards;
+}
+.weather-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.retrieval-date {
+  text-align: center;
+  padding: 0.5em 0;
+}
+div p.error-message {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 2em;
+  color: hotpink;
+}
+div p.error-message a {
+  text-decoration: none;
+  color: #6ed6ef;
+  transition: color 500ms linear;
+}
+div p.error-message a:hover {
+  color: whitesmoke;
+}
+
+.footer {
+  position: fixed;
+  display: inline-block;
+  left: 50%;
+  bottom: 1%;
+  transform: translate(-50%);
+}
+.footer a {
+  color: whitesmoke;
+  text-decoration: none;
+  transition: color 500ms linear;
+}
+.footer a:hover {
+  color: wheat;
+}
+@keyframes image-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
