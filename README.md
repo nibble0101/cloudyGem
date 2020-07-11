@@ -1,10 +1,10 @@
-# Weather App
+# cloudyGem
 
-This is a single page application(SPA) built with [React.js](https://reactjs.org/) and CSS. It displays weather information for a given city/town for the next five days. This project is hosted live on [Netlify](https://www.netlify.com/). You can view it [Here](https://weather-app-v-1.netlify.app/).
+This is a **weather** app which displays weather information for a given city/town for the next five days. It is a single page application(SPA) built with [React.js](https://reactjs.org/) and CSS. This project is hosted live on [Netlify](https://www.netlify.com/). You can view it [Here](https://weather-app-v-1.netlify.app/).
 
 ## Data source
 
-The weather information displayed is retrieved from [Open Weather Map API](https://openweathermap.org) and client's location is obtained from [geoiplookup.io](https://geoiplookup.io/).
+The weather information displayed is retrieved from [Open Weather Map API](https://openweathermap.org) and client's location is obtained from [geoiplookup.io](https://geoiplookup.io/) API.
 
 ## Live project
 
