@@ -10,5 +10,8 @@ The weather information displayed is retrieved from [Open Weather Map API](https
 
 This project can be viewed live [Here](https://cloudygem.netlify.app/) on Netlify.
 
+## Copyright
+
+[MIT License](https://choosealicense.com/licenses/mit/).
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/94051286-528b-4a94-af9b-6040b7871d0e/deploy-status)](https://app.netlify.com/sites/weather-app-v-1/deploys)
