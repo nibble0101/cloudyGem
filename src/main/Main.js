@@ -13,7 +13,7 @@ function Main() {
   const [country, setCountry] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
   useEffect(() => {
-    const coord = { lat: null, lon: null };
+    const coord = { lat: null, lon: null, country: null, city: null};
     async function fetchData() {
       setIsLoading(true);
       await fetch(urlLocationApi)
@@ -21,6 +21,8 @@ function Main() {
         .then((data) => {
           coord.lat = data.latitude;
           coord.lon = data.longitude;
+          coord.country = data.country_name;
+          coord.city = data.city
         })
         .catch((err) => setError(err));
       const urlObj = new GenerateUrl(
@@ -32,6 +34,7 @@ function Main() {
         .then((response) => response.json())
         .then((data) => {
           setData(data);
+          setCountry({country: coord.country, city: coord.city});
           setIsLoading(false);
         })
         .catch((err) => setError(err));
@@ -44,7 +47,7 @@ function Main() {
       <Search value={country} />
       {isLoading && <Loader />}
       {error && <Error />}
-      {data && <Display data={data} />}
+      {data && country && <Display data={data} country = {country} />}
       {data && <Footer />}
     </Fragment>
   );

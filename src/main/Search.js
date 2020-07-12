@@ -7,7 +7,6 @@ function Search(props){
             <input
               type="text"
               id="search-box"
-              value={props.value}
               onChange={props.handleChange}
               placeholder="Enter city..."
             />

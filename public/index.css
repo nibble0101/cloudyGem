@@ -68,9 +68,7 @@ body {
   align-items: center;
   margin: 0 auto;
 }
-.search input{
-    background-color: skyblue;
-}
+
 .search input {
   padding: 0.5em 1em;
   color: teal;
@@ -96,6 +94,12 @@ body {
     padding: 1em;
 }
 
+.country{
+    text-align: center;
+    color: whitesmoke;
+    font-weight: 1000;
+
+}
 .weather-info-wrapper{
     display: flex;
     flex-direction: column;
@@ -105,26 +109,33 @@ body {
     margin: 1em 0;
     box-shadow: 2px 1px 3px #141414;
 }
-.weather-info-wrapper h1{
+.weather-info-wrapper p{
     font-weight: 100;
     color: whitesmoke;
+    text-transform: capitalize;
 }
+p.date{
+    padding: 1em;
+    color: palegreen;
+
+}
+
+
 table {
   border-collapse: collapse;
-  background-color: black;
+  background-color: #07192e;
   color: whitesmoke;
+  margin: 1em;
 }
 table,
 th,
+tr,
 td {
   padding: 0.5em 1em;
 }
 .inner-table,
 .inner-table td {
   border: none;
-}
-tr:nth-child(odd) {
-  background-color: grey;
 }
 
 .main-header-text {
