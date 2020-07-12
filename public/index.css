@@ -31,7 +31,21 @@ body {
 .app-name-text-2{
     color: #9e8969;
 }
-
+.app-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.spinning-sun {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.spinning-sun img {
+    width: 100%;
+    max-width: 50px;
+    animation: image-spinner 5s linear infinite forwards;
+  }
 .menu-icon-wrapper button {
   padding: 0.5em 1em;
   outline: none;
@@ -57,25 +71,43 @@ body {
 .search input{
     background-color: skyblue;
 }
-.search input,
-.search button {
+.search input {
   padding: 0.5em 1em;
-  outline: none;
   color: teal;
-  border: 1px solid transparent;
   margin: 0.1em;
+  border: 1px solid transparent;
+  background-color: #243b55;
+  box-shadow: 2px 1px 2px #141e30;
+ 
 }
-.search button {
-  background-color: gray;
-  color: whitesmoke;
+.search input[type = "submit"]{
+    transition: all 1000ms linear;
+    background-color: #141e30;
 }
-.search input:focus {
-  outline: none;
-}
-.search button:hover {
+.search input[type = "submit"]:hover {
   color: whitesmoke;
   background-color: #9e8969;
   cursor: pointer;
+}
+.display{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    padding: 1em;
+}
+
+.weather-info-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #243b55;
+    margin: 1em 0;
+    box-shadow: 2px 1px 3px #141414;
+}
+.weather-info-wrapper h1{
+    font-weight: 100;
+    color: whitesmoke;
 }
 table {
   border-collapse: collapse;
@@ -155,19 +187,7 @@ ul {
   color: whitesmoke;
   font-size: 3em;
 }
-.img-div {
-  display: flex;
-  height: 60vh;
-  justify-content: center;
-  align-items: center;
-}
-.img-div img {
-  width: 100%;
-  max-width: 200px;
-  display: block;
-  margin: 0 auto;
-  animation: image-animation 5s linear infinite forwards;
-}
+
 .weather-information {
   display: flex;
   flex-direction: column;
@@ -203,7 +223,7 @@ div p.error-message a:hover {
   width: 100%;
 }
 
-@keyframes image-animation {
+@keyframes image-spinner {
   0% {
     transform: rotate(0deg);
   }
@@ -211,3 +231,42 @@ div p.error-message a:hover {
     transform: rotate(360deg);
   }
 }
+
+
+/* Loading icon */
+.loader{
+    color: purple;
+}
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ripple div {
+    position: absolute;
+    border: 4px solid purple;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  .lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  @keyframes lds-ripple {
+    0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+    }
+  }
+  

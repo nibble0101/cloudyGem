@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import HeaderText from "./Headertext";
-
+const imageUrl = "https://cdn.pixabay.com/photo/2013/07/13/10/23/sun-157126_960_720.png"
 function Header(props) {
   return (
     <Fragment>
@@ -8,6 +8,12 @@ function Header(props) {
         <h1 className = "app-name">
           <span className="app-name-text-1">cloudy</span>
           <span className="app-name-text-2">GEM</span>
+          <span className = "spinning-sun"> 
+          <img
+            src= {imageUrl}
+            alt="spinning yellow sun"
+          />
+          </span>
         </h1>
         <h1> Weather App </h1>
         <div className="menu-icon-wrapper">

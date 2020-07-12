@@ -1,4 +1,5 @@
 import React from "react";
+import Zoom from "react-reveal/Zoom";
 const iconUrlObject = {
   baseUrl: "http://openweathermap.org/img/wn/",
   weatherIcon: null,
@@ -16,12 +17,14 @@ function Try(props) {
   iconUrlObject.icon = daily.icon;
 
   return (
-    <div className="wrapper">
-      <h1>{daily.description}</h1>
-      <p>
-        <img src={iconUrlObject.url} alt={daily.main} />
-      </p>
-    </div>
+    <Zoom>
+      <div className="weather-info-wrapper">
+        <h1>{daily.description}</h1>
+        <p>
+          <img src={iconUrlObject.url} alt={daily.main} />
+        </p>
+      </div>
+    </Zoom>
   );
 }
 export default Try;
