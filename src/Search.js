@@ -1,29 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Search extends Component {
-  componentDidMount() {
-    document.getElementById("search-box").onkeyup = (e) => {
-      if (e.code === "Enter") {
-        this.props.handleSubmit();
-      }
-    };
-  }
-  render() {
+function Search(props){
     return (
-      <div className="search">
-        <input
-          type="text"
-          id="search-box"
-          value={this.props.value}
-          onChange={this.props.handleChange}
-          placeholder="Enter city..."
-        />
-        <button className="submit" onClick={this.props.handleSubmit}>
-          Search
-        </button>
-      </div>
-    );
-  }
+        <div className="search">
+          <form onSubmit = {props.handleSubmit}>
+            <input
+              type="text"
+              id="search-box"
+              value={props.value}
+              onChange={props.handleChange}
+              placeholder="Enter city..."
+            />
+            <input type = "submit" className="submit" />
+          </form> 
+        </div>
+      );
 }
 
 export default Search;

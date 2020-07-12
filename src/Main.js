@@ -48,7 +48,8 @@ class Main extends Component {
       data: null,
     });
   };
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.target.preventDefault();
     if (this.state.country) {
       const url = "http://api.openweathermap.org/data/2.5/weather?q=",
         key = "&appid=" + process.env.REACT_APP_API_KEY,
