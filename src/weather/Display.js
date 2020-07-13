@@ -14,7 +14,7 @@ function Display(props) {
           return (
             <Try
               dailyWeather={dailyWeather}
-              key={Math.random()}
+              key={index + "display"}
               timeZoneOffset={props.data.timezone_offset}
             />
           );
