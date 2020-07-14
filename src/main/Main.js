@@ -58,17 +58,19 @@ function Main() {
       urlFirstFetch + params + "&appid=" + process.env.REACT_APP_API_KEY;
     async function fetchData() {
       setIsLoading(true);
-      const dataCoord = await fetch(url).then((res) => res.json());
-      const urlObj = new GenerateUrl(
-        dataCoord.coord.lat,
-        dataCoord.coord.lon,
-        process.env.REACT_APP_API_KEY
-      );
-     
-      const dataWeather = await fetch(urlObj.url()).then((res) => res.json());
-      setData(dataWeather);
-      setCountry({ country: dataCoord.sys.country, city: dataCoord.name });
-      setIsLoading(false);
+      try {
+        const dataCoord = await fetch(url).then((res) => res.json());
+        const urlObj = new GenerateUrl(
+          dataCoord.coord.lat,
+          dataCoord.coord.lon,
+          process.env.REACT_APP_API_KEY
+        );
+
+        const dataWeather = await fetch(urlObj.url()).then((res) => res.json());
+        setData(dataWeather);
+        setCountry({ country: dataCoord.sys.country, city: dataCoord.name });
+        setIsLoading(false);
+      } catch {setError("error")}
     }
     fetchData();
   }, [params]);
@@ -81,7 +83,9 @@ function Main() {
       />
       {isLoading && <Loader />}
       {error && <Error />}
-      {data && country && !isLoading && <Display data={data} country={country} />}
+      {data && country && !isLoading && (
+        <Display data={data} country={country} />
+      )}
       {data && !isLoading && <Footer />}
     </Fragment>
   );

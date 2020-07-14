@@ -1,5 +1,5 @@
 import React from "react";
-import Try from "./Try";
+import Weather from "./Weather";
 import Zoom from "react-reveal/Zoom";
 
 function Display(props) {
@@ -12,7 +12,7 @@ function Display(props) {
       <div className="display">
         {daily.map((dailyWeather, index) => {
           return (
-            <Try
+            <Weather
               dailyWeather={dailyWeather}
               key={index + "display"}
               timeZoneOffset={props.data.timezone_offset}

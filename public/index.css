@@ -106,12 +106,10 @@ body {
   background-color: #243b55;
   margin: 1em 0;
   box-shadow: 2px 1px 3px #141414;
-}
-.weather-info-wrapper {
-  font-weight: 100;
   color: whitesmoke;
   text-transform: capitalize;
 }
+
 .date {
   padding: 1em;
   color: #9e8969;

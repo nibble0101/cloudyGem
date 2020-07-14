@@ -28,8 +28,9 @@ function HeaderText() {
           in the search bar and click search. The weather information includes:
         </p>
         <ul>
-          <li> Average Temperature</li>
+          <li> Temperature</li>
           <li> Humidity</li>
+          <li> Wind Speed </li>
           <li> Atmospheric Pressure</li>
           <li> Time for Sunrise </li>
           <li> Time for Sunset </li>
