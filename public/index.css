@@ -227,15 +227,7 @@ div p.error-message {
   text-transform: capitalize;
   font-weight: 500;
   font-size: 2em;
-  color: hotpink;
-}
-div p.error-message a {
-  text-decoration: none;
-  color: #6ed6ef;
-  transition: color 500ms linear;
-}
-div p.error-message a:hover {
-  color: whitesmoke;
+  color: green;
 }
 
 .footer {

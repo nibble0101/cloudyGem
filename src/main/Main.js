@@ -58,6 +58,7 @@ function Main() {
       urlFirstFetch + params + "&appid=" + process.env.REACT_APP_API_KEY;
     async function fetchData() {
       setIsLoading(true);
+      setError(null)
       try {
         const dataCoord = await fetch(url).then((res) => res.json());
         const urlObj = new GenerateUrl(
