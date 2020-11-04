@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect, useCallback } from "react";
 import Footer from "../footer/Footer";
 import Search from "./Search";
+import Loader from "./Loader";
 import GenerateUrl from "./url";
 import Display from "../weather/Display";
 const urlLocationApi = "https://json.geoiplookup.io";
@@ -16,10 +17,13 @@ function Main() {
     setError(null);
     setValue(e.target.value);
   }, []);
-  const handleSubmit = useCallback((e) => {
-    setParams(value);
-    e.preventDefault();
-  }, [value]);
+  const handleSubmit = useCallback(
+    (e) => {
+      setParams(value);
+      e.preventDefault();
+    },
+    [value]
+  );
   useEffect(() => {
     const coord = { lat: null, lon: null, country: null, city: null };
     async function fetchData() {
@@ -86,14 +90,16 @@ function Main() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
-      {data ? (
+      {data === null ? (
+        <Loader />
+      ) : (
         <Display
           data={data}
           country={country}
           isLoading={isLoading}
           error={error}
         />
-      ) : null}
+      )}
       {data && !isLoading && !error && <Footer />}
     </Fragment>
   );
