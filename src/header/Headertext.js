@@ -6,12 +6,31 @@ function HeaderText() {
     const hamMenu = document.querySelector(".menu-icon-wrapper");
     hamMenu.addEventListener("click", (e) => {
       menu.classList.toggle("show");
+      /*
+      e.stopPropagation() prevents propagation of the current
+      click event in the capturing and bubbling phases.
+      */
+      e.stopPropagation();
     });
-
-    return () => {
-      hamMenu.removeEventListener("click", (e) => {
+    document.body.addEventListener("click", (e) => {
+      if (menu.classList.contains("show")) {
         menu.classList.toggle("show");
+      }
+    });
+    return () => {
+
+      hamMenu.removeEventListener("click", (e) => {
+        if (menu.classList.contains("show")) {
+          menu.classList.toggle("show");
+        }
       });
+
+      document.body.removeEventListener("click", (e) => {
+        if (menu.classList.contains("show")) {
+          menu.classList.toggle("show");
+        }
+      });
+      
     };
   }, []);
   return (
