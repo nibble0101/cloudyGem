@@ -222,22 +222,12 @@ ul {
   text-align: center;
   padding: 0.5em 0;
 }
-div p.error-message {
+.error-message {
   text-align: center;
   text-transform: capitalize;
-  font-weight: 500;
+  font-weight: 100;
   font-size: 2em;
-  color: hotpink;
 }
-div p.error-message a {
-  text-decoration: none;
-  color: #6ed6ef;
-  transition: color 500ms linear;
-}
-div p.error-message a:hover {
-  color: whitesmoke;
-}
-
 .footer {
   background-color: black;
   height: 10vh;
