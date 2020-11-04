@@ -1,10 +1,8 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useCallback } from "react";
 import Footer from "../footer/Footer";
 import Search from "./Search";
 import GenerateUrl from "./url";
 import Display from "../weather/Display";
-import Error from "../error/Error";
-import Loader from "./Loader";
 const urlLocationApi = "https://json.geoiplookup.io";
 const urlFirstFetch = "https://api.openweathermap.org/data/2.5/weather?q=";
 function Main() {
@@ -14,13 +12,14 @@ function Main() {
   const [isLoading, setIsLoading] = useState(null);
   const [params, setParams] = useState("");
   const [value, setValue] = useState("");
-  const handleChange = (e) => {
+  const handleChange = useCallback((e) => {
+    setError(null);
     setValue(e.target.value);
-  };
-  const handleSubmit = (e) => {
+  }, []);
+  const handleSubmit = useCallback((e) => {
     setParams(value);
     e.preventDefault();
-  };
+  }, [value]);
   useEffect(() => {
     const coord = { lat: null, lon: null, country: null, city: null };
     async function fetchData() {
@@ -46,12 +45,15 @@ function Main() {
           setCountry({ country: coord.country, city: coord.city });
           setIsLoading(false);
         })
-        .catch((err) => setError(err));
+        .catch((err) => {
+          setError(err);
+          setIsLoading(false);
+        });
     }
     fetchData();
   }, []);
   useEffect(() => {
-    if (!params) {
+    if (params === "") {
       return;
     }
     const url =
@@ -70,7 +72,10 @@ function Main() {
         setData(dataWeather);
         setCountry({ country: dataCoord.sys.country, city: dataCoord.name });
         setIsLoading(false);
-      } catch {setError("error")}
+      } catch {
+        setError("error");
+        setIsLoading(false);
+      }
     }
     fetchData();
   }, [params]);
@@ -81,12 +86,15 @@ function Main() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
-      {isLoading && <Loader />}
-      {error && <Error />}
-      {data && country && !isLoading && (
-        <Display data={data} country={country} />
-      )}
-      {data && !isLoading && <Footer />}
+      {data ? (
+        <Display
+          data={data}
+          country={country}
+          isLoading={isLoading}
+          error={error}
+        />
+      ) : null}
+      {data && !isLoading && !error && <Footer />}
     </Fragment>
   );
 }
