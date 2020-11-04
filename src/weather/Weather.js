@@ -4,6 +4,7 @@ import { iconUrlObject, dateFormatter, setSunTime } from "./utils";
 
 function Weather(props) {
   const { dailyWeather } = props;
+  // Setting the icon url
   iconUrlObject.icon = dailyWeather.weather[0].icon;
 
   return (
