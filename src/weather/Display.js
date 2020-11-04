@@ -1,11 +1,23 @@
 import React from "react";
 import Weather from "./Weather";
-import Zoom from "react-reveal/Zoom";
+import Error from "../error/Error";
+import Loader from "../main/Loader";
+import Fade from "react-reveal/Fade";
 
 function Display(props) {
-  const { daily } = props.data;
+  const {
+    data: { daily },
+    error,
+    isLoading
+  } = props;
+  if(isLoading === true){
+    return <Loader />;
+  }
+  if (error) {
+    return <Error />;
+  }
   return (
-    <Zoom>
+    <Fade>
       <p className="country">
         {props.country.city} - {props.country.country}
       </p>
@@ -20,7 +32,7 @@ function Display(props) {
           );
         })}
       </div>
-    </Zoom>
+    </Fade>
   );
 }
 export default Display;
