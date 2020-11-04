@@ -159,9 +159,6 @@ body {
 .header-text-wrapper-all {
   position: relative;
   opacity: 0;
-  transition: all 500ms linear;
-  -webkit-transition: all 500ms linear;
-  -moz-transitio: all 500ms linear;
 }
 .show {
   opacity: 1;
