@@ -1,13 +1,13 @@
 import React from "react";
-import Zoom from "react-reveal/Zoom";
+import Fade from "react-reveal/Fade";
 import { iconUrlObject, dateFormatter, setSunTime } from "./utils";
 
-function spany(props) {
+function Weather(props) {
   const { dailyWeather } = props;
   iconUrlObject.icon = dailyWeather.weather[0].icon;
 
   return (
-    <Zoom>
+    <Fade>
       <div className="weather-info-wrapper">
         <div className="date">{dateFormatter(dailyWeather.dt)}</div>
         <div>{dailyWeather.weather[0].description} Expected</div>
@@ -68,7 +68,7 @@ function spany(props) {
           </div>
         </div>
       </div>
-    </Zoom>
+    </Fade>
   );
 }
-export default spany;
+export default Weather;
