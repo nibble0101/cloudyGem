@@ -9,7 +9,7 @@
 
 body {
   font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   color: #6ed6ef;
   background: #141e30;
   background: -webkit-linear-gradient(to bottom, #243b55, #141e30);
@@ -76,7 +76,9 @@ body {
   border: 1px solid transparent;
   background-color: #243b55;
   box-shadow: 2px 1px 2px #141e30;
+  font-family: "Open Sans Condensed", sans-serif;
 }
+
 .search input[type="submit"] {
   transition: all 1000ms linear;
   background-color: #141e30;
