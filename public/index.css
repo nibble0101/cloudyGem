@@ -161,9 +161,11 @@ body {
 .header-text-wrapper-all {
   position: relative;
   opacity: 0;
+  display: none;
 }
 .show {
   opacity: 1;
+  display: block;
 }
 .header-text-container {
   background-color: #243b55;
