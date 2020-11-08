@@ -18,7 +18,6 @@ function HeaderText() {
       }
     });
     return () => {
-
       hamMenu.removeEventListener("click", (e) => {
         if (menu.classList.contains("show")) {
           menu.classList.toggle("show");
@@ -30,7 +29,6 @@ function HeaderText() {
           menu.classList.toggle("show");
         }
       });
-      
     };
   }, []);
   return (
@@ -40,6 +38,8 @@ function HeaderText() {
           className="img"
           src="https://cdn.pixabay.com/photo/2015/07/09/00/29/woman-837156_960_720.jpg"
           alt="Cold pretty woman"
+          width="250"
+          height="166.7"
         ></img>
         <p className="header-text">
           This is a weather app displaying the expected weather for different
