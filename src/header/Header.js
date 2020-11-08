@@ -12,6 +12,8 @@ function Header(props) {
           <img
             src= {imageUrl}
             alt="spinning yellow sun"
+            width="50"
+            height="50"
           />
           </span>
         </h1>
