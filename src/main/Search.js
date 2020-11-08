@@ -5,11 +5,12 @@ function Search(props) {
     <div className="search">
       <form onSubmit={props.handleSubmit} id="form">
         <label htmlFor="search-box">
-          <span className="label-text">Enter Query</span>
+          {/* <span className="label-text">Enter Query</span> */}
           <input
             type="text"
             id="search-box"
             placeholder="Enter city..."
+            aria-label="Enter name of city"
             defaultValue={props.value}
             onChange={props.handleChange}
           />
