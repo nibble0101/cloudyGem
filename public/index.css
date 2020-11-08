@@ -47,7 +47,6 @@ body {
 }
 .menu-icon-wrapper button {
   padding: 0.5em 1em;
-  outline: none;
   background-color: gray;
   border: 1px solid transparent;
   color: whitesmoke;
