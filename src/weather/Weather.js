@@ -13,57 +13,62 @@ function Weather(props) {
         <div className="date">{dateFormatter(dailyWeather.dt)}</div>
         <div>{dailyWeather.weather[0].description} Expected</div>
         <div>
-          <img src={iconUrlObject.url} alt={dailyWeather.weather[0].main} />
+          <img
+            src={iconUrlObject.url}
+            width="100"
+            height="100"
+            alt={dailyWeather.weather[0].main}
+          />
         </div>
-        <div className = "other">
-          <div className = "temperature">
-            <div className = "label"> Temperature </div>
-            <div className = "temperature-breakdown">
-              <span className = "morning">
+        <div className="other">
+          <div className="temperature">
+            <div className="label"> Temperature </div>
+            <div className="temperature-breakdown">
+              <span className="morning">
                 <span> Morning </span>
                 <span> {dailyWeather.temp.morn} &#8451; </span>
               </span>
-              <span className = "day">
+              <span className="day">
                 <span> Day </span>
                 <span> {dailyWeather.temp.day} &#8451; </span>
               </span>
-              <span className = "evening">
+              <span className="evening">
                 <span> Evening </span>
                 <span> {dailyWeather.temp.eve} &#8451; </span>
               </span>
-              <span className = "night">
+              <span className="night">
                 <span> Night </span>
                 <span> {dailyWeather.temp.night} &#8451; </span>
               </span>
-              <span className = "min-temp">
+              <span className="min-temp">
                 <span> Min. Temperature </span>
                 <span> {dailyWeather.temp.min} &#8451;</span>
               </span>
-              <span className = "max-temp">
+              <span className="max-temp">
                 <span> Max. Temperature </span>
                 <span> {dailyWeather.temp.max} &#8451; </span>
               </span>
             </div>
           </div>
-          <div className = "humidity">
+          <div className="humidity">
             <span> Humidity </span>
             <span> {dailyWeather.humidity} % </span>
           </div>
-          <div className = "pressure">
+          <div className="pressure">
             <span> Pressure </span>
             <span> {dailyWeather.pressure} hPa </span>
           </div>
-          <div className = "wind-speed">
+          <div className="wind-speed">
             <span> Wind Speed </span>
             <span> {dailyWeather.wind_speed} metres/sec </span>
           </div>
-          <div className = "sunrise">
+          <div className="sunrise">
             <span> Sunrise </span>
             <span>
               {setSunTime(dailyWeather.sunrise, props.timeZoneOffset)}
             </span>
           </div>
-          <div className = "sunset">
+          <div className="sunset">
             <span> Sunset </span>
             <span>{setSunTime(dailyWeather.sunset, props.timeZoneOffset)}</span>
           </div>
