@@ -128,7 +128,7 @@ body {
   background-color: #07192e;
   margin: 1em;
   border-radius: 10px;
-  color: #f2a022;
+  color: #18f43f;
 }
 .temperature {
   display: grid;
@@ -138,7 +138,7 @@ body {
   background-color: #07192e;
   margin: 1em;
   border-radius: 10px;
-  color:#f2a022;
+  color: #18f43f;
 }
 .morning,
 .day,
