@@ -77,7 +77,22 @@ body {
   box-shadow: 2px 1px 2px #141e30;
   font-family: "Open Sans Condensed", sans-serif;
 }
+.search input::-webkit-input-placeholder {
+  /* Edge */
+  color: white;
+  font-weight: 500;
+}
 
+.search input::-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+  font-weight: 500;
+}
+.search input::placeholder {
+  color: white;
+  font-weight: 500;
+  opacity: 1;
+}
 .search input[type="submit"] {
   transition: all 1000ms linear;
   background-color: #141e30;
